@@ -2,7 +2,7 @@ package entity;
 
 public class TmPersonalInformation {
     private int perid;
-    private int uid;
+    private int tmuid;
     private String name;
     private String sex;
     private String headimg;
@@ -16,12 +16,12 @@ public class TmPersonalInformation {
         this.perid = perid;
     }
 
-    public int getUid() {
-        return uid;
+    public int getTmuid() {
+        return tmuid;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setTmuid(int tmuid) {
+        this.tmuid = tmuid;
     }
 
     public String getName() {
@@ -56,9 +56,9 @@ public class TmPersonalInformation {
         this.signature = signature;
     }
 
-    public TmPersonalInformation(int perid, int uid, String name, String sex, String headimg, String signature) {
+    public TmPersonalInformation(int perid, int tmuid, String name, String sex, String headimg, String signature) {
         this.perid = perid;
-        this.uid = uid;
+        this.tmuid = tmuid;
         this.name = name;
         this.sex = sex;
         this.headimg = headimg;

@@ -2,7 +2,7 @@ package entity;
 
 public class TmShoppingAddress {
     private int addid;
-    private int uid;
+    private int tmuid;
     private String address;
     private int post; //邮编
     private String phone;
@@ -15,12 +15,12 @@ public class TmShoppingAddress {
         this.addid = addid;
     }
 
-    public int getUid() {
-        return uid;
+    public int getTmuid() {
+        return tmuid;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setTmuid(int tmuid) {
+        this.tmuid = tmuid;
     }
 
     public String getAddress() {
@@ -47,9 +47,9 @@ public class TmShoppingAddress {
         this.phone = phone;
     }
 
-    public TmShoppingAddress(int addid, int uid, String address, int post, String phone) {
+    public TmShoppingAddress(int addid, int tmuid, String address, int post, String phone) {
         this.addid = addid;
-        this.uid = uid;
+        this.tmuid = tmuid;
         this.address = address;
         this.post = post;
         this.phone = phone;
