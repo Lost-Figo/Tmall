@@ -1,16 +1,22 @@
 package entity;
 
-public class TmUser {
-    private int tmuid;
+public class TmStoreAdmin {
+    private int sdid;
     private String name;
     private String password;
 
-    public int getTmuid() {
-        return tmuid;
+    public TmStoreAdmin(int sdid, String name, String password) {
+        this.sdid = sdid;
+        this.name = name;
+        this.password = password;
     }
 
-    public void setTmuid(int tmuid) {
-        this.tmuid = tmuid;
+    public int getSdid() {
+        return sdid;
+    }
+
+    public void setSdid(int sdid) {
+        this.sdid = sdid;
     }
 
     public String getName() {
