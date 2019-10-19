@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Tmall.iml" filepath="$PROJECT_DIR$/Tmall.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../houtai dianpu/houtai dianpu.iml" filepath="$PROJECT_DIR$/../houtai dianpu/houtai dianpu.iml" />
     </modules>
   </component>
 </project>
