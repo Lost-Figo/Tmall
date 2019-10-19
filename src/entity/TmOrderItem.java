@@ -3,7 +3,7 @@ package entity;
 public class TmOrderItem {
     private int oiid;
     private int pdid;
-    private int uid;
+    private int tmuid;
     private int oid;
     private int count;
 
@@ -23,12 +23,12 @@ public class TmOrderItem {
         this.pdid = pdid;
     }
 
-    public int getUid() {
-        return uid;
+    public int getTmuid() {
+        return tmuid;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setTmuid(int tmuid) {
+        this.tmuid = tmuid;
     }
 
     public int getOid() {
@@ -47,10 +47,10 @@ public class TmOrderItem {
         this.count = count;
     }
 
-    public TmOrderItem(int oiid, int pdid, int uid, int oid, int count) {
+    public TmOrderItem(int oiid, int pdid, int tmuid, int oid, int count) {
         this.oiid = oiid;
         this.pdid = pdid;
-        this.uid = uid;
+        this.tmuid = tmuid;
         this.oid = oid;
         this.count = count;
     }
