@@ -74,7 +74,7 @@
   <component name="ProjectKey">
     <option name="state" value="https://github.com/JetBrains/idea-templates.git" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_9" default="true" project-jdk-name="9" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
   <component name="VssConfiguration">
@@ -110,10 +110,6 @@
       <option name="RECURSIVE" value="false" />
       <option name="VERSION" />
     </GetOptions>
-  </component>
-  <component name="antWorkspaceConfiguration">
-    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
-    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="masterDetails">
     <states>
