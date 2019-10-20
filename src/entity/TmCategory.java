@@ -24,4 +24,7 @@ public class TmCategory {
         this.cid = cid;
         this.name = name;
     }
+
+    public TmCategory() {
+    }
 }

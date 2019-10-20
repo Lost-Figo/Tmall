@@ -28,4 +28,7 @@ public class TmUser {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public TmUser() {
+    }
 }

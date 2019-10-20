@@ -56,6 +56,9 @@ public class TmPersonalInformation {
         this.signature = signature;
     }
 
+    public TmPersonalInformation() {
+    }
+
     public TmPersonalInformation(int perid, int tmuid, String name, String sex, String headimg, String signature) {
         this.perid = perid;
         this.tmuid = tmuid;

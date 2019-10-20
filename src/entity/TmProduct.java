@@ -65,6 +65,9 @@ public class TmProduct {
         this.spid = spid;
     }
 
+    public TmProduct() {
+    }
+
     public TmProduct(int pdid, String name, String subtitle, int originPrice, int promotePrice, int cid, int spid) {
         this.pdid = pdid;
         this.name = name;

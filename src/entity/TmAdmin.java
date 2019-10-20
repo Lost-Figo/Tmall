@@ -44,4 +44,7 @@ public class TmAdmin {
         this.password = password;
         this.tmclass = tmclass;
     }
+
+    public TmAdmin() {
+    }
 }
