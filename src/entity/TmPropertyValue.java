@@ -44,4 +44,7 @@ public class TmPropertyValue {
         this.pdid = pdid;
         this.value = value;
     }
+
+    public TmPropertyValue() {
+    }
 }

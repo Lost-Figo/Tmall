@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class TmReview {
     private int rid;
-    private int uid;
-    private int pid;
+    private int tmuid;
+    private int pdid;
     private String content;
     private Date createDate;
 
@@ -17,20 +17,20 @@ public class TmReview {
         this.rid = rid;
     }
 
-    public int getUid() {
-        return uid;
+    public int getTmuid() {
+        return tmuid;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setTmuid(int tmuid) {
+        this.tmuid = tmuid;
     }
 
-    public int getPid() {
-        return pid;
+    public int getPdid() {
+        return pdid;
     }
 
-    public void setPid(int pid) {
-        this.pid = pid;
+    public void setPdid(int pdid) {
+        this.pdid = pdid;
     }
 
     public String getContent() {
@@ -49,11 +49,14 @@ public class TmReview {
         this.createDate = createDate;
     }
 
-    public TmReview(int rid, int uid, int pid, String content, Date createDate) {
+    public TmReview(int rid, int tmuid, int pdid, String content, Date createDate) {
         this.rid = rid;
-        this.uid = uid;
-        this.pid = pid;
+        this.tmuid = tmuid;
+        this.pdid = pdid;
         this.content = content;
         this.createDate = createDate;
+    }
+
+    public TmReview() {
     }
 }

@@ -47,6 +47,9 @@ public class TmStore {
         this.describe = describe;
     }
 
+    public TmStore() {
+    }
+
     public TmStore(int sid, int sdid, String name, String phone, String describe) {
         this.sid = sid;
         this.sdid = sdid;

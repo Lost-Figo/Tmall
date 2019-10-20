@@ -38,6 +38,9 @@ public class TmOrder {
         return ordercode;
     }
 
+    public TmOrder() {
+    }
+
     public void setOrdercode(int ordercode) {
         this.ordercode = ordercode;
     }

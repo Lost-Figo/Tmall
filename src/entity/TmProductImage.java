@@ -2,7 +2,7 @@ package entity;
 
 public class TmProductImage {
     private int piid;
-    private int pid;
+    private int pdid;
     private String imageadd;
 
     public int getPiid() {
@@ -13,12 +13,12 @@ public class TmProductImage {
         this.piid = piid;
     }
 
-    public int getPid() {
-        return pid;
+    public int getPdid() {
+        return pdid;
     }
 
-    public void setPid(int pid) {
-        this.pid = pid;
+    public void setPdid(int pdid) {
+        this.pdid = pdid;
     }
 
     public String getImageadd() {
@@ -29,9 +29,12 @@ public class TmProductImage {
         this.imageadd = imageadd;
     }
 
-    public TmProductImage(int piid, int pid, String imageadd) {
+    public TmProductImage(int piid, int pdid, String imageadd) {
         this.piid = piid;
-        this.pid = pid;
+        this.pdid = pdid;
         this.imageadd = imageadd;
+    }
+
+    public TmProductImage() {
     }
 }
