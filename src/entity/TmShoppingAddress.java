@@ -54,4 +54,7 @@ public class TmShoppingAddress {
         this.post = post;
         this.phone = phone;
     }
+
+    public TmShoppingAddress() {
+    }
 }

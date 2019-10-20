@@ -34,4 +34,7 @@ public class TmStoreAdmin {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public TmStoreAdmin() {
+    }
 }

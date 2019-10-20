@@ -34,4 +34,7 @@ public class TmProperty {
         this.name = name;
         this.cid = cid;
     }
+
+    public TmProperty() {
+    }
 }

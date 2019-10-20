@@ -34,4 +34,7 @@ public class TmProductImage {
         this.pdid = pdid;
         this.imageadd = imageadd;
     }
+
+    public TmProductImage() {
+    }
 }

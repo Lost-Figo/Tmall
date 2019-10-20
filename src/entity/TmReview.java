@@ -56,4 +56,7 @@ public class TmReview {
         this.content = content;
         this.createDate = createDate;
     }
+
+    public TmReview() {
+    }
 }

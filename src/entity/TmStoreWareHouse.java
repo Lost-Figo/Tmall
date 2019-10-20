@@ -44,4 +44,7 @@ public class TmStoreWareHouse {
         this.pdid = pdid;
         this.count = count;
     }
+
+    public TmStoreWareHouse() {
+    }
 }

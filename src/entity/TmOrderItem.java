@@ -47,6 +47,9 @@ public class TmOrderItem {
         this.count = count;
     }
 
+    public TmOrderItem() {
+    }
+
     public TmOrderItem(int oiid, int pdid, int tmuid, int oid, int count) {
         this.oiid = oiid;
         this.pdid = pdid;
