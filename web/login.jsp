@@ -10,7 +10,7 @@
 <head>
     <title>Title</title>
     <script src="https://unpkg.com/ionicons@4.2.2/dist/ionicons.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="backstage/css/style.css">
 </head>
 <body>
 <div class="container" id="container">
@@ -45,6 +45,6 @@
         </div>
     </div>
 </div>
-<script  src="css/script.js"></script>
+<script  src="backstage/js/script.js"></script>
 </body>
 </html>
