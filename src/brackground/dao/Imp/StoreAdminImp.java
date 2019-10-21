@@ -1,8 +1,8 @@
-package servlet.houtai.dao.Imp;
+package brackground.dao.Imp;
 
 import entity.TmStoreAdmin;
 import org.apache.commons.dbutils.QueryRunner;
-import servlet.houtai.dao.StorAdminDao;
+import brackground.dao.StorAdminDao;
 import utils.C3p0Utils;
 
 import java.sql.SQLException;

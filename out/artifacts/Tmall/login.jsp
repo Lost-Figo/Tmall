@@ -17,7 +17,7 @@
     <div class="form-container sign-up-container">
         <form action="#">
             <h1>注册</h1>
-            <input type="text" placeholder="姓名">
+            <input type="text" placeholder="用户名">
             <input type="password" placeholder="密码">
             <button>注册</button>
         </form>
