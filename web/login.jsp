@@ -15,18 +15,18 @@
 <body>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
-        <form action="#">
+        <form action="reg.tm">
             <h1>注册</h1>
             <input type="text" placeholder="用户名">
             <input type="password" placeholder="密码">
-            <button>注册</button>
+            <button onclick="">注册</button>
         </form>
     </div>
     <div class="form-container sign-in-container">
-        <form action="#">
+        <form action="login.tm">
             <h1>登录</h1>
-            <input type="text" placeholder="用户名">
-            <input type="password" placeholder="密码">
+            <input type="text" placeholder="用户名" name="logname">
+            <input type="password" placeholder="密码" name="logpassword">
             <button>登录</button>
         </form>
     </div>

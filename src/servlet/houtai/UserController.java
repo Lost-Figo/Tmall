@@ -13,7 +13,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 @WebServlet("*.tm")
-
+/**
+ * 后台登录系统的数据操作
+ */
 public class UserController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
