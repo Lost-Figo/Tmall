@@ -1,8 +1,8 @@
 package servlet.houtai;
 
 import entity.TmStoreAdmin;
-import servlet.houtai.dao.Imp.StoreAdminImp;
-import servlet.houtai.dao.StorAdminDao;
+import brackground.dao.Imp.StoreAdminImp;
+import brackground.dao.StorAdminDao;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
