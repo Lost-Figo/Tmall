@@ -8,45 +8,51 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <head>
+    <%
+        String path = request.getContextPath();
+        String basePath = request.getScheme() + "://"
+                + request.getServerName() + ":" + request.getServerPort()
+                + path + "/"+"backstage/";
+    %>
     <meta charset="utf-8" />
     <title>网站后台管理系统   - 素材牛模板演示</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <link href="<%=basePath %>assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="<%=basePath %>assets/css/font-awesome.min.css" />
     <!--[if IE 7]>
-    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+    <link rel="stylesheet" href="<%=basePath %>assets/css/font-awesome-ie7.min.css" />
     <![endif]-->
-    <link rel="stylesheet" href="assets/css/ace.min.css" />
-    <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-    <link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="<%=basePath %>assets/css/ace.min.css" />
+    <link rel="stylesheet" href="<%=basePath %>assets/css/ace-rtl.min.css" />
+    <link rel="stylesheet" href="<%=basePath %>assets/css/ace-skins.min.css" />
+    <link rel="stylesheet" href="<%=basePath %>css/style.css"/>
     <!--[if lte IE 8]>
-    <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+    <link rel="stylesheet" href="<%=basePath %>assets/css/ace-ie.min.css" />
     <![endif]-->
-    <script src="assets/js/ace-extra.min.js"></script>
+    <script src="<%=basePath %>assets/js/ace-extra.min.js"></script>
     <!--[if lt IE 9]>
-    <script src="assets/js/html5shiv.js"></script>
-    <script src="assets/js/respond.min.js"></script>
+    <script src="<%=basePath %>assets/js/html5shiv.js"></script>
+    <script src="<%=basePath %>assets/js/respond.min.js"></script>
     <![endif]-->
     <!--[if !IE]> -->
-    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="<%=basePath %>js/jquery-1.9.1.min.js"></script>
     <!-- <![endif]-->
     <!--[if IE]>
-    <script type="text/javascript">window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");</script>
+    <script type="text/javascript">window.jQuery || document.write("<script src='<%=basePath %>assets/js/jquery-1.10.2.min.js'>"+"<"+"script>");</script>
     <![endif]-->
     <script type="text/javascript">
-        if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
+        if("ontouchend" in document) document.write("<script src='<%=basePath %>assets/js/jquery.mobile.custom.min.js'>"+"<"+"script>");
     </script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/typeahead-bs2.min.js"></script>
+    <script src="<%=basePath %>assets/js/bootstrap.min.js"></script>
+    <script src="<%=basePath %>assets/js/typeahead-bs2.min.js"></script>
     <!--[if lte IE 8]>
-    <script src="assets/js/excanvas.min.js"></script>
+    <script src="<%=basePath %>assets/js/excanvas.min.js"></script>
     <![endif]-->
-    <script src="assets/js/ace-elements.min.js"></script>
-    <script src="assets/js/ace.min.js"></script>
-    <script src="assets/layer/layer.js" type="text/javascript"></script>
-    <script src="assets/laydate/laydate.js" type="text/javascript"></script>
-    <script src="js/jquery.nicescroll.js" type="text/javascript"></script>
+    <script src="<%=basePath %>assets/js/ace-elements.min.js"></script>
+    <script src="<%=basePath %>assets/js/ace.min.js"></script>
+    <script src="<%=basePath %>assets/layer/layer.js" type="text/javascript"></script>
+    <script src="<%=basePath %>assets/laydate/laydate.js" type="text/javascript"></script>
+    <script src="<%=basePath %>js/jquery.nicescroll.js" type="text/javascript"></script>
 
     <script type="text/javascript">
         $(function(){
@@ -231,7 +237,7 @@
         <div class="navbar-header pull-left">
             <a href="#" class="navbar-brand">
                 <small>
-                    <img src="images/logo.png" width="470px">
+                    <img src="<%=basePath %>images/logo.png" width="470px">
                 </small>
             </a><!-- /.brand -->
         </div><!-- /.navbar-header -->
@@ -365,10 +371,10 @@
             </div><!-- #sidebar-shortcuts -->
             <div id="menu_style" class="menu_style">
                 <ul class="nav nav-list" id="nav_list">
-                    <li class="home"><a href="javascript:void(0)" name="home.html" class="iframeurl" title=""><i class="icon-home"></i><span class="menu-text"> 系统首页 </span></a></li>
+                    <li class="home"><a href="javascript:void(0)" name="backstage/home.jsp" class="iframeurl" title=""><i class="icon-home"></i><span class="menu-text"> 系统首页 </span></a></li>
                     <li><a href="#" class="dropdown-toggle"><i class="icon-desktop"></i><span class="menu-text"> 产品管理 </span><b class="arrow icon-angle-down"></b></a>
                         <ul class="submenu">
-                            <li class="home"><a  href="javascript:void(0)" name="Products_List.html"  title="产品类表" class="iframeurl"><i class="icon-double-angle-right"></i>产品类表</a></li>
+                            <li class="home"><a  href="javascript:void(0)" name="backstage/Product_list.jsp"  title="产品类表" class="iframeurl"><i class="icon-double-angle-right"></i>产品类表</a></li>
                             <li class="home"><a  href="javascript:void(0)" name="Brand_Manage.html" title="品牌管理"  class="iframeurl"><i class="icon-double-angle-right"></i>品牌管理</a></li>
                             <li class="home"><a href="javascript:void(0)" name="Category_Manage.html" title="分类管理"  class="iframeurl"><i class="icon-double-angle-right"></i>分类管理</a></li>
 
@@ -479,7 +485,7 @@
                 </ul>
             </div>
 
-            <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;"name="iframe" frameborder="0" src="home.jsp">  </iframe>
+            <iframe id="iframe" style="border:0; width:100%; background-color:#FFF;"name="iframe" frameborder="0" src="backstage/home.jsp">  </iframe>
 
 
             <!-- /.page-content -->
