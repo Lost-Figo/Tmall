@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Tmall">
+    <output-path>$PROJECT_DIR$/out/artifacts/Tmall</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Tmall" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Tmall/web/Web2" />
+      <element id="javaee-facet-resources" facet="Tmall/web/Web" />
+    </root>
+  </artifact>
+</component>
