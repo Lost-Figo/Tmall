@@ -12,13 +12,28 @@
 <head>
     <meta charset="utf-8">
     <title>天猫首页</title>
-    <link rel="stylesheet" type="text/css" href="css/cssreset-min.css">
-    <link rel="stylesheet" type="text/css" href="css/tm.css"/>
-    <link rel="stylesheet" type="text/css" href="css/iconfont.css">
 
-    <script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+    <%
+        String path = request.getContextPath();
+        String basePath = request.getScheme() + "://"
+                + request.getServerName() + ":" + request.getServerPort()
+                + path + "/frontDesk/yfg/";
+    %>
+
+
+
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix='fmt' %>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+
+    <link rel="stylesheet" type="text/css" href="<%=basePath %>css/cssreset-min.css">
+    <link rel="stylesheet" type="text/css" href="<%=basePath %>css/tm.css"/>
+    <link rel="stylesheet" type="text/css" href="<%=basePath %>css/iconfont.css">
+
+    <script src="<%=basePath %>js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
-    <script src="js/tm.js" type="text/javascript" charset="utf-8"></script>
+    <script src="<%=basePath %>js/tm.js" type="text/javascript" charset="utf-8"></script>
     <script>
         window.onload = function(){
             lb();//轮播图程序

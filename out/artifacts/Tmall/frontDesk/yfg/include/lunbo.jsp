@@ -18,10 +18,10 @@
             <div class="lb-bg" style="background-color: #afe7f8; opacity: 1; z-index: 1; display: block;">		<!--这里面改变轮播图的样式-->
                 <div class="w1230">
                     <div class="lb-nr">
-                        <a href=""><img src="img/TB10DZCQFXXXXXHXpXXSutbFXXX.jpg"/></a>
+                        <a href=""><img src="<%=basePath %>img/TB10DZCQFXXXXXHXpXXSutbFXXX.jpg"/></a>
                         <div class="lb-xt">
-                            <a href=""><img src="img/TB22vj_lB0kpuFjSsppXXcGTXXa_!!46-2-yamato.png_240x5000q100.jpg_.webp"/></a>
-                            <a href=""><img src="img/TB2OtTboHBmpuFjSZFuXXaG_XXa_!!114-2-yamato.png_240x5000q100.jpg_.webp"/></a>
+                            <a href=""><img src="<%=basePath %>img/TB22vj_lB0kpuFjSsppXXcGTXXa_!!46-2-yamato.png_240x5000q100.jpg_.webp"/></a>
+                            <a href=""><img src="<%=basePath %>img/TB2OtTboHBmpuFjSZFuXXaG_XXa_!!114-2-yamato.png_240x5000q100.jpg_.webp"/></a>
                         </div>
                     </div>
                 </div>
@@ -29,17 +29,17 @@
             <div class="lb-bg" style="background-color: #e8e8e8; opacity: 0; z-index: 0; display: none;">		<!--这里面改变轮播图的样式-->
                 <div class="w1230">
                     <div class="lb-nr">
-                        <a href=""><img src="img/TB16qEfQpXXXXcHXFXXSutbFXXX.jpg"/></a>
+                        <a href=""><img src="<%=basePath %>img/TB16qEfQpXXXXcHXFXXSutbFXXX.jpg"/></a>
                     </div>
                 </div>
             </div>
             <div class="lb-bg" style="background-color: #afe7f8; opacity: 1; z-index: 1; display: block;">		<!--这里面改变轮播图的样式-->
                 <div class="w1230">
                     <div class="lb-nr">
-                        <a href=""><img src="img/TB10DZCQFXXXXXHXpXXSutbFXXX.jpg"/></a>
+                        <a href=""><img src="<%=basePath %>img/TB10DZCQFXXXXXHXpXXSutbFXXX.jpg"/></a>
                         <div class="lb-xt">
-                            <a href=""><img src="img/TB22vj_lB0kpuFjSsppXXcGTXXa_!!46-2-yamato.png_240x5000q100.jpg_.webp"/></a>
-                            <a href=""><img src="img/TB2OtTboHBmpuFjSZFuXXaG_XXa_!!114-2-yamato.png_240x5000q100.jpg_.webp"/></a>
+                            <a href=""><img src="<%=basePath %>img/TB22vj_lB0kpuFjSsppXXcGTXXa_!!46-2-yamato.png_240x5000q100.jpg_.webp"/></a>
+                            <a href=""><img src="<%=basePath %>img/TB2OtTboHBmpuFjSZFuXXaG_XXa_!!114-2-yamato.png_240x5000q100.jpg_.webp"/></a>
                         </div>
                     </div>
                 </div>
@@ -47,7 +47,7 @@
             <div class="lb-bg" style="background-color: #e8e8e8; opacity: 0; z-index: 0; display: none;">		<!--这里面改变轮播图的样式-->
                 <div class="w1230">
                     <div class="lb-nr">
-                        <a href=""><img src="img/TB16qEfQpXXXXcHXFXXSutbFXXX.jpg"/></a>
+                        <a href=""><img src="<%=basePath %>img/TB16qEfQpXXXXcHXFXXSutbFXXX.jpg"/></a>
                     </div>
                 </div>
             </div>

@@ -52,7 +52,7 @@
         <dl>
             <dt>手机天猫</dt>
             <dd>
-                <a href=""><img src="img/TB14VZKHXXXXXcAXXXX64VRZFXX-105-105.png"/></a>
+                <a href=""><img src="<%=basePath %>img/TB14VZKHXXXXXcAXXXX64VRZFXX-105-105.png"/></a>
             </dd>
         </dl>
     </div>
@@ -94,11 +94,11 @@
         </p>
         <div class="db-3-xinxi">
             增值电信业务经营许可证： <a href="">浙B2-20110446</a> 网络文化经营许可证：<a href="">浙网文[2015]0295-065号</a> <a href="">12318举报</a></br>
-            互联网药品信息服务资质证书编号：<a href="">浙-（经营性）-2017-0005</a>   <a href=""><img src="img/TB1yEqRPXXXXXXPXpXXXXXXXXXX-20-20.png" alt="" /> 浙公网安备 33010002000120号</a>
+            互联网药品信息服务资质证书编号：<a href="">浙-（经营性）-2017-0005</a>   <a href=""><img src="<%=basePath %>img/TB1yEqRPXXXXXXPXpXXXXXXXXXX-20-20.png" alt="" /> 浙公网安备 33010002000120号</a>
             <b>© 2003-2017 TMALL.COM 版权所有</b>
             <p>
-                <a href=""><img src="img/TB1j5gtHXXXXXXjaXXXydRxIFXX-73-30.jpg"/></a>
-                <a href=""><img src="img/TB13mgzHXXXXXbjXVXXzby4IVXX-80-30.jpg"/></a>
+                <a href=""><img src="<%=basePath %>img/TB1j5gtHXXXXXXjaXXXydRxIFXX-73-30.jpg"/></a>
+                <a href=""><img src="<%=basePath %>img/TB13mgzHXXXXXbjXVXXzby4IVXX-80-30.jpg"/></a>
             </p>
         </div>
     </div>
