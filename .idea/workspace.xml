@@ -6,7 +6,11 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="404ab81c-dce9-4042-b248-c4061ff8f694" name="Default Changelist" comment="" />
+    <list default="true" id="404ab81c-dce9-4042-b248-c4061ff8f694" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Tmall.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/c3p0Demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test" beforeDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,27 +75,7 @@
     <panes>
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Tmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tmall" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tmall" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Tmall" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Tmall" type="462c0819:PsiDirectoryNode" />
-              <item name="web" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -103,7 +87,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.1542013" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
@@ -299,7 +283,7 @@
       <workItem from="1571623758241" duration="36000" />
       <workItem from="1571654450225" duration="699000" />
       <workItem from="1571733747281" duration="124000" />
-      <workItem from="1571733891621" duration="345000" />
+      <workItem from="1571733891621" duration="461000" />
     </task>
     <task id="LOCAL-00001" summary="配置文件提交">
       <created>1571456291402</created>
@@ -329,11 +313,18 @@
       <option name="project" value="LOCAL" />
       <updated>1571734059141</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="文件夹更新&#10;添加前端frontend文件夹和后台brackground文件夹">
+      <created>1571734274763</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1571734274763</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469000" />
+    <option name="totallyTimeSpent" value="585000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
