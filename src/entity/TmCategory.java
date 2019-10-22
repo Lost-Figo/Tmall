@@ -27,4 +27,12 @@ public class TmCategory {
 
     public TmCategory() {
     }
+
+    @Override
+    public String toString() {
+        return "TmCategory{" +
+                "cid=" + cid +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

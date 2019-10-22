@@ -135,7 +135,7 @@ body
 .Order_Statistics{ width:280px; float:left; border:1px solid #ddd; margin-right:15px; height:213px;}
 .news_style .title_name,
 .Order_Statistics .title_name {padding-left:20px;
-	font-size:13px;
+	font-size:16px;
 	border-bottom:1px solid #dddddd;
     background: #2a8bcc!important;
     background-image: -webkit-gradient(linear,left 0,left 100%,from(#ffffff),to(#ededed))!important;
@@ -144,7 +144,7 @@ body
     background-image: linear-gradient(to bottom,#ffffff 0,#ededed 100%)!important;
     background-repeat: repeat-x!important;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff',endColorstr='#ededed',GradientType=0)!important;
-	height:40px; line-height:40px;
+	height:36px; line-height:36px;
 	color:#333333;
 	 width:100%	
 }
