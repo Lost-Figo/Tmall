@@ -23,5 +23,6 @@
     <orderEntry type="library" name="lib3" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
     <orderEntry type="library" name="c3p0-0.9.1.2 (3)" level="project" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

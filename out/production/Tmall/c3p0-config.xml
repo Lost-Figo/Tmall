@@ -11,7 +11,7 @@
 
     <named-config name="oracle">
         <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
-        <property name="jdbcUrl">jdbc:oracle:thin:@127.0.0.1:1521:orcl</property>
+        <property name="jdbcUrl">jdbc:oracle:thin:@127.0.0.1:1521:XE</property>
         <property name="user">scott</property>
         <property name="password">tiger</property>
         <!-- 初始化数据库连接池时连接的数量 -->

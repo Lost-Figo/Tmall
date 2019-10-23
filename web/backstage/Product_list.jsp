@@ -8,35 +8,43 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <%
+        String path = request.getContextPath();
+        String basePath = request.getScheme() + "://"
+                + request.getServerName() + ":" + request.getServerPort()
+                + path + "/"+"backstage/";
+    %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css"/>
-<link rel="stylesheet" href="assets/css/ace.min.css" />
-<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-<link rel="stylesheet" href="Widget/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
-<link href="Widget/icheck/icheck.css" rel="stylesheet" type="text/css" />
+<link href="<%=basePath %>assets/css/bootstrap.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="<%=basePath %>css/style.css"/>
+<link rel="stylesheet" href="<%=basePath %>assets/css/ace.min.css" />
+<link rel="stylesheet" href="<%=basePath %>assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="<%=basePath %>Widget/zTree/css/zTreeStyle/zTreeStyle.css" type="text/css">
+<link href="<%=basePath %>Widget/icheck/icheck.css" rel="stylesheet" type="text/css" />
 <!--[if IE 7]>
-<link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+<link rel="stylesheet" href="<%=basePath %>assets/css/font-awesome-ie7.min.css" />
 <![endif]-->
 <!--[if lte IE 8]>
-<link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+<link rel="stylesheet" href="<%=basePath %>assets/css/ace-ie.min.css" />
 <![endif]-->
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/typeahead-bs2.min.js"></script>
+<script src="<%=basePath %>js/jquery-1.9.1.min.js"></script>
+<script src="<%=basePath %>assets/js/bootstrap.min.js"></script>
+<script src="<%=basePath %>assets/js/typeahead-bs2.min.js"></script>
 <!-- page specific plugin scripts -->
-<script src="assets/js/jquery.dataTables.min.js"></script>
-<script src="assets/js/jquery.dataTables.bootstrap.js"></script>
-<script type="text/javascript" src="js/H-ui.js"></script>
-<script type="text/javascript" src="js/H-ui.admin.js"></script>
-<script src="assets/layer/layer.js" type="text/javascript" ></script>
-<script src="assets/laydate/laydate.js" type="text/javascript"></script>
-<script type="text/javascript" src="Widget/zTree/js/jquery.ztree.all-3.5.min.js"></script>
-<script src="js/lrtk.js" type="text/javascript" ></script>
+<script src="<%=basePath %>assets/js/jquery.dataTables.min.js"></script>
+<script src="<%=basePath %>assets/js/jquery.dataTables.bootstrap.js"></script>
+<script type="text/javascript" src="<%=basePath %>js/H-ui.js"></script>
+<script type="text/javascript" src="<%=basePath %>js/H-ui.admin.js"></script>
+<script src="<%=basePath %>assets/layer/layer.js" type="text/javascript" ></script>
+<script src="<%=basePath %>assets/laydate/laydate.js" type="text/javascript"></script>
+<script type="text/javascript" src="<%=basePath %>Widget/zTree/js/jquery.ztree.all-3.5.min.js"></script>
+<script src="<%=basePath %>js/lrtk.js" type="text/javascript" ></script>
+    <script src="<%=basePath %>js/ajax.js"></script>
+
 <title>产品列表 - 素材牛模板演示</title>
 </head>
 <body>
@@ -273,6 +281,7 @@
         </div>
     </div>
 </div>
+<p id="p11" style="display: none"></p>
 </body>
 </html>
 <script>
@@ -327,6 +336,7 @@
     });
 </script>
 <script type="text/javascript">
+
     //初始化宽度、高度
     $(".widget-box").height($(window).height()-215);
     $(".table_menu_list").width($(window).width()-260);
@@ -367,24 +377,27 @@
         }
     };
 
-    var zNodes =[
-        { id:1, pId:0, name:"商城分类列表", open:true},
-        { id:11, pId:1, name:"蔬菜水果"},
-        { id:111, pId:11, name:"蔬菜"},
-        { id:112, pId:11, name:"苹果"},
-        { id:113, pId:11, name:"大蒜"},
-        { id:114, pId:11, name:"白菜"},
-        { id:115, pId:11, name:"青菜"},
-        { id:12, pId:1, name:"手机数码"},
-        { id:121, pId:12, name:"手机 "},
-        { id:122, pId:12, name:"照相机 "},
-        { id:13, pId:1, name:"电脑配件"},
-        { id:131, pId:13, name:"手机 "},
-        { id:122, pId:13, name:"照相机 "},
-        { id:14, pId:1, name:"服装鞋帽"},
-        { id:141, pId:14, name:"手机 "},
-        { id:42, pId:14, name:"照相机 "},
-    ];
+    var zNodes;
+    $ajax({
+        url:"category.pd",
+        type:"get",
+        data:{
+        },
+        success:function(data){
+            $("#p11").text(JSON.stringify(data));
+        },
+        error:function(error){
+            alert(error);
+        }
+    });
+
+    // var zNodes =[
+    //     { id:111, pId:11, name:"蔬菜"},
+    //     { id:112, pId:11, name:"苹果"},
+    //     { id:113, pId:11, name:"大蒜"},
+    //     { id:114, pId:11, name:"白菜"},
+    //     { id:115, pId:11, name:"青菜"},
+    // ];
 
     var code;
 
@@ -395,12 +408,15 @@
     }
 
     $(document).ready(function(){
-        var t = $("#treeDemo");
-        t = $.fn.zTree.init(t, setting, zNodes);
-        demoIframe = $("#testIframe");
-        demoIframe.bind("load", loadReady);
-        var zTree = $.fn.zTree.getZTreeObj("tree");
-        zTree.selectNode(zTree.getNodeByParam("id",'11'));
+
+        setTimeout(function () {
+            var t = $("#treeDemo");
+            t = $.fn.zTree.init(t, setting, JSON.parse($("#p11").text()));
+            demoIframe = $("#testIframe");
+            demoIframe.bind("load", loadReady);
+            var zTree = $.fn.zTree.getZTreeObj("tree");
+            zTree.selectNode(zTree.getNodeByParam("id",'11'));
+        },0);
     });
     /*产品-停用*/
     function member_stop(obj,id){
