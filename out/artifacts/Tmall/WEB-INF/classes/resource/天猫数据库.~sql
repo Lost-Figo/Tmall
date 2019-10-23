@@ -299,7 +299,10 @@ insert into tmorder values(9005,20180521,'湖南工业大学',15155,'小超先生',4848484
 insert into tmorder values(9006,20180321,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-03-12 10:47:16','YYYY-MM-DD HH24:MI:SS'),null,null,null,1,8001);
 insert into tmorder values(9007,20180721,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-07-12 10:47:16','YYYY-MM-DD HH24:MI:SS'),null,null,null,5,8001);
 insert into tmorder values(9008,20181021,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-10-12 10:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-13 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-14 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-15 04:47:16','YYYY-MM-DD HH24:MI:SS'),4,8001);
+insert into tmorder values(9009,20181023,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-10-23 10:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-24 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-25 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-26 04:47:16','YYYY-MM-DD HH24:MI:SS'),4,8001);
 
+
+select promoteprice,sum() from tmproduct,tmorderitem where pdid in (select pdid from tmorderitem where oid in (select oid from tmorder where status != 5))
 
 --订单项表
 --drop table tmorderitem;
@@ -324,6 +327,7 @@ insert into tmorderitem values(10005,3001,8001,9005,4);
 insert into tmorderitem values(10006,3001,8001,9006,3);
 insert into tmorderitem values(10007,3001,8001,9007,1);
 insert into tmorderitem values(10008,3001,8001,9008,2);
+insert into tmorderitem values(10009,3002,8001,9009,2);
 
 --收货地址表
 --drop table tmshoppingAddress;

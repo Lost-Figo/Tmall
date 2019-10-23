@@ -301,8 +301,12 @@ insert into tmorder values(9007,20180721,'湖南工业大学',15155,'小超先生',4848484
 insert into tmorder values(9008,20181021,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-10-12 10:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-13 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-14 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-15 04:47:16','YYYY-MM-DD HH24:MI:SS'),4,8001);
 insert into tmorder values(9009,20181023,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-10-23 10:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-24 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-25 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-26 04:47:16','YYYY-MM-DD HH24:MI:SS'),4,8001);
 
+select sum(onemoney) from (select tmproduct.pdid,promoteprice*summoney as onemoney from (select pdid,sum(count) as summoney from (select * from tmorderitem where oid in (select oid from tmorder where status != 5)) a group by pdid order by pdid) b,tmproduct where b.pdid = tmproduct.pdid);
+select count(*) from tmorder where status = 4;
+select sum(onemoney) from (select tmproduct.pdid,promoteprice*summoney as onemoney from (select pdid,sum(count) as summoney from (select * from tmorderitem where oid in (select oid from tmorder where status = 5)) a group by pdid order by pdid) b,tmproduct where b.pdid = tmproduct.pdid);
+select count(*) from tmorder where to_char(createdate,'mm') = 10 and to_char(createdate,'yyyy') = to_char(sysdate,'yyyy')-1;
 
-select promoteprice,sum() from tmproduct,tmorderitem where pdid in (select pdid from tmorderitem where oid in (select oid from tmorder where status != 5))
+
 
 --订单项表
 --drop table tmorderitem;

@@ -93,10 +93,10 @@ public class OrderManagementImp implements OrderManagementDao {
         return Integer.parseInt(queryRunner.query(sql,new ScalarHandler(),month).toString());
     }
 }
-class test{
-    public static void main(String[] args) throws SQLException {
-        OrderManagementDao orderManagementDao = new OrderManagementImp();
-        double o = orderManagementDao.findamount();
-        System.out.println(orderManagementDao.ordersendedbymonth(8));
-    }
-}
+//class test{
+//    public static void main(String[] args) throws SQLException {
+//        OrderManagementDao orderManagementDao = new OrderManagementImp();
+//        double o = orderManagementDao.findamount();
+//        System.out.println(orderManagementDao.ordersendedbymonth(8));
+//    }
+//}
