@@ -92,24 +92,6 @@ public class OrderManagementImp implements OrderManagementDao {
         String sql = "select count(*) from tmorder where (to_char(createdate,'mm') = ?) and (to_char(createdate,'yyyy') = to_char(sysdate,'yyyy')-1) and (status = 3)";
         return Integer.parseInt(queryRunner.query(sql,new ScalarHandler(),month).toString());
     }
-    //查找各个省份的订单量
-    @Override
-    public int ordernumbyprovince(String province) throws SQLException {
-        String sql = "select count(*) from tmorder where address like ?";
-        return Integer.parseInt(queryRunner.query(sql,new ScalarHandler(),province).toString());
-    }
-    //查找订单中的所有商品
-    @Override
-    public int ordernumall() throws SQLException {
-        String sql = "select sum(allnumber) from (select name,sum(allcount) as allnumber from (select tmproduct.pdid,cid,allcount from tmproduct,(select pdid,sum(count) as allcount from tmorderitem group by pdid) a where tmproduct.pdid =a.pdid) b,tmCategory where b.cid = tmCategory.cid group by name)";
-        return Integer.parseInt(queryRunner.query(sql,new ScalarHandler()).toString());
-    }
-    //查找某一类别的商品的数目
-    @Override
-    public double ordernumbytype(String type) throws SQLException {
-        String sql = "select allnumber from (select name,sum(allcount) as allnumber from (select tmproduct.pdid,cid,allcount from tmproduct,(select pdid,sum(count) as allcount from tmorderitem group by pdid) a where tmproduct.pdid =a.pdid) b,tmCategory where b.cid = tmCategory.cid group by name) where name = ?";
-        return Double.parseDouble(String.format("%.2f",Double.parseDouble(queryRunner.query(sql,new ScalarHandler(),type).toString())*100/ordernumall()));
-    }
 }
 class test1{
     public static void main(String[] args) throws SQLException {

@@ -17,7 +17,6 @@ import java.sql.SQLException;
 public class UserController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println(123);
         StorAdminDao storAdminDao = new StoreAdminImp();
         String uri = req.getRequestURI();
         if(uri.indexOf("login")>=0){

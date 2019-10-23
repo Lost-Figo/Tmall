@@ -12,4 +12,5 @@
 <%@include file="include/topSearch.jsp"%>
 <%@include file="include/topside.jsp"%>
 <%@include file="include/lunbo.jsp"%>
+<%@include file="include/productByCid.jsp"%>>
 <%@include file="include/footer.jsp"%>

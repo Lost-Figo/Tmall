@@ -318,6 +318,11 @@ select count(*) from tmorder where status = 4;
 select sum(onemoney) from (select tmproduct.pdid,promoteprice*summoney as onemoney from (select pdid,sum(count) as summoney from (select * from tmorderitem where oid in (select oid from tmorder where status = 5)) a group by pdid order by pdid) b,tmproduct where b.pdid = tmproduct.pdid);
 select count(*) from tmorder where to_char(createdate,'mm') = 10 and to_char(createdate,'yyyy') = to_char(sysdate,'yyyy')-1;
 
+select sum(onemoney) from (select tmproduct.pdid,promoteprice*summoney as onemoney from (select pdid,sum(count) as summoney from (select * from tmorderitem where oid in (select oid from tmorder where status != 5)) a group by pdid order by pdid) b,tmproduct where b.pdid = tmproduct.pdid);
+select count(*) from tmorder where status = 4;
+select sum(onemoney) from (select tmproduct.pdid,promoteprice*summoney as onemoney from (select pdid,sum(count) as summoney from (select * from tmorderitem where oid in (select oid from tmorder where status = 5)) a group by pdid order by pdid) b,tmproduct where b.pdid = tmproduct.pdid);
+select count(*) from tmorder where to_char(createdate,'mm') = 10 and to_char(createdate,'yyyy') = to_char(sysdate,'yyyy')-1;
+
 
 
 --¶©µ¥Ïî±í
