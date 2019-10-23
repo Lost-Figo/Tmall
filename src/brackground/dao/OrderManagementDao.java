@@ -35,4 +35,10 @@ public interface OrderManagementDao {
     int orderpaidbymonth(int month) throws SQLException;
     //某个月已发货的所有订单
     int ordersendedbymonth(int month) throws SQLException;
+    //查找各个省份的订单量
+    int ordernumbyprovince(String province) throws SQLException;
+    //查找某一类别的商品的占总商品数的比例
+    double ordernumbytype(String type) throws SQLException;
+    //查找订单中的所有商品
+    int ordernumall() throws SQLException;
 }

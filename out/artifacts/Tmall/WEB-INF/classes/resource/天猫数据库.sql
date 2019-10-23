@@ -246,7 +246,7 @@ INSERT INTO tmpropertyvalue VALUES (40013,2001,3001,'Hisense/海信');
 --drop table tmproductimage;
 create table tmproductimage(
        piid number,   --产品图片id
-       pdid number,    --属性id
+       pdid number,    --商品id
        imageadd varchar2(500),    --图片路径
        constraint pk_productimg_piid primary key(piid),
        constraint tmpr_pdid_fk foreign key(pdid) references tmProduct(pdid)--外键 
@@ -300,9 +300,25 @@ insert into tmorder values(9006,20180321,'湖南工业大学',15155,'小超先生',4848484
 insert into tmorder values(9007,20180721,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-07-12 10:47:16','YYYY-MM-DD HH24:MI:SS'),null,null,null,5,8001);
 insert into tmorder values(9008,20181021,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-10-12 10:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-13 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-14 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-15 04:47:16','YYYY-MM-DD HH24:MI:SS'),4,8001);
 insert into tmorder values(9009,20181023,'湖南工业大学',15155,'小超先生',484848484,'第一个订单',to_date('2018-10-23 10:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-24 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-25 04:47:16','YYYY-MM-DD HH24:MI:SS'),to_date('2018-10-26 04:47:16','YYYY-MM-DD HH24:MI:SS'),4,8001);
+update tmorder set address = '安徽省' where oid = 9001;
+update tmorder set address = '北京市' where oid = 9002;
+update tmorder set address = '湖北省' where oid = 9003;
+update tmorder set address = '湖南省' where oid = 9004;
+update tmorder set address = '贵州省' where oid = 9005;
+update tmorder set address = '江西省' where oid = 9006;
+update tmorder set address = '福建省' where oid = 9007;
+update tmorder set address = '安徽省' where oid = 9008;
+update tmorder set address = '安徽省' where oid = 9009;
+select * from tmorder;
+select count(*) from tmorder where address like '%安徽省%';
 
 
-select promoteprice,sum() from tmproduct,tmorderitem where pdid in (select pdid from tmorderitem where oid in (select oid from tmorder where status != 5))
+select sum(onemoney) from (select tmproduct.pdid,promoteprice*summoney as onemoney from (select pdid,sum(count) as summoney from (select * from tmorderitem where oid in (select oid from tmorder where status != 5)) a group by pdid order by pdid) b,tmproduct where b.pdid = tmproduct.pdid);
+select count(*) from tmorder where status = 4;
+select sum(onemoney) from (select tmproduct.pdid,promoteprice*summoney as onemoney from (select pdid,sum(count) as summoney from (select * from tmorderitem where oid in (select oid from tmorder where status = 5)) a group by pdid order by pdid) b,tmproduct where b.pdid = tmproduct.pdid);
+select count(*) from tmorder where to_char(createdate,'mm') = 10 and to_char(createdate,'yyyy') = to_char(sysdate,'yyyy')-1;
+
+
 
 --订单项表
 --drop table tmorderitem;
@@ -328,6 +344,19 @@ insert into tmorderitem values(10006,3001,8001,9006,3);
 insert into tmorderitem values(10007,3001,8001,9007,1);
 insert into tmorderitem values(10008,3001,8001,9008,2);
 insert into tmorderitem values(10009,3002,8001,9009,2);
+insert into tmorderitem values(100010,3002,8001,9005,4);
+insert into tmorderitem values(100011,3005,8001,9006,3);
+insert into tmorderitem values(100012,3003,8001,9007,1);
+insert into tmorderitem values(100013,3006,8001,9008,2);
+insert into tmorderitem values(100014,3006,8001,9009,2);
+insert into tmorderitem values(100015,3005,8001,9005,4);
+insert into tmorderitem values(100016,3009,8001,9006,3);
+insert into tmorderitem values(100017,3008,8001,9007,1);
+insert into tmorderitem values(100018,3008,8001,9008,2);
+insert into tmorderitem values(100019,3006,8001,9009,2);
+select * from tmorderitem;
+select allnumber from (select name,sum(allcount) as allnumber from (select tmproduct.pdid,cid,allcount from tmproduct,(select pdid,sum(count) as allcount from tmorderitem group by pdid) a where tmproduct.pdid =a.pdid) b,tmCategory where b.cid = tmCategory.cid group by name) where name = '平板电视';
+
 
 --收货地址表
 --drop table tmshoppingAddress;
