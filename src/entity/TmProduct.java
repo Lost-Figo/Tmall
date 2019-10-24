@@ -77,4 +77,17 @@ public class TmProduct {
         this.cid = cid;
         this.spid = spid;
     }
+
+    @Override
+    public String toString() {
+        return "TmProduct{" +
+                "pdid=" + pdid +
+                ", name='" + name + '\'' +
+                ", subtitle='" + subtitle + '\'' +
+                ", originPrice=" + originPrice +
+                ", promotePrice=" + promotePrice +
+                ", cid=" + cid +
+                ", spid=" + spid +
+                '}';
+    }
 }

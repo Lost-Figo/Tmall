@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <div class="toubu">
     <!--左侧弹出导航-->
     <div class="fldh-wai" id="fldh-wai">
@@ -54,7 +55,7 @@
     <div class="toubu">
         <!--活动顶部入口s-->
         <div class="" style="min-width:1260px;height:80px;background:#354b3e;text-align: center;">
-            <a href=""><img src="img/TB1188XQVXXXXX2XVXXSutbFXXX.jpg"/></a>
+            <a href=""><img src="<%=basePath %>img/TB1188XQVXXXXX2XVXXSutbFXXX.jpg"/></a>
         </div>
         <!--活动顶部入口e-->
         <!-- 头部顶部导航 s -->
