@@ -92,6 +92,21 @@ public class OrderManagementImp implements OrderManagementDao {
         String sql = "select count(*) from tmorder where (to_char(createdate,'mm') = ?) and (to_char(createdate,'yyyy') = to_char(sysdate,'yyyy')-1) and (status = 3)";
         return Integer.parseInt(queryRunner.query(sql,new ScalarHandler(),month).toString());
     }
+
+    @Override
+    public int ordernumbyprovince(String province) throws SQLException {
+        return 0;
+    }
+
+    @Override
+    public double ordernumbytype(String type) throws SQLException {
+        return 0;
+    }
+
+    @Override
+    public int ordernumall() throws SQLException {
+        return 0;
+    }
 }
 class test1{
     public static void main(String[] args) throws SQLException {
