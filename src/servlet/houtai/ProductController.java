@@ -2,9 +2,12 @@ package servlet.houtai;
 
 import brackground.dao.CategoryDao;
 import brackground.dao.Imp.CategoryImp;
+import brackground.dao.Imp.PropertyImp;
+import brackground.dao.PropertyDao;
 import com.alibaba.fastjson.JSON;
 import entity.TmCategory;
 import entity.TmProduct;
+import entity.TmProperty;
 import entity.Znodes;
 import brackground.dao.ProductDao;
 import brackground.dao.Imp.ProductImp;
@@ -16,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +32,7 @@ public class ProductController extends HttpServlet {
         CategoryDao categoryDao = new CategoryImp();
         PrintWriter pw = resp.getWriter();
         ProductDao productDao = new ProductImp();
+        PropertyDao propertyDao = new PropertyImp();
         if(uri.indexOf("category")>=0){   //后台获取产品种类
             List<TmCategory> list = null;
             try {
@@ -73,6 +78,58 @@ public class ProductController extends HttpServlet {
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
+                }
+            }else if(uri.indexOf("addcate")>=0){
+                String[] sxname = req.getParameterValues("shuxingname");
+                String catename = req.getParameter("product-category-name");
+                ArrayList<TmProperty> list = null;
+                try {
+                    categoryDao.createcate(catename);
+                    int id = categoryDao.findidbyname(catename).intValue();
+                    if(sxname!=null){
+                        for (int i=0;i<sxname.length;i++){
+                            propertyDao.createpro(id,sxname[i]);
+                        }
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }else if(uri.indexOf("catenamecheck")>=0){
+                String catename = req.getParameter("name");
+                System.out.println(1);
+                System.out.println(catename);
+                try {
+                    if(categoryDao.findname(catename)){
+                        System.out.println(2);
+                        pw.write("msgno");
+                    }else{
+                        pw.write("msgyes");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }else if(uri.indexOf("catechange")>=0){
+                String catename = req.getParameter("catename");
+                try {
+                    int id = categoryDao.findidbyname(catename).intValue();
+                    List<TmProperty> sxname = propertyDao.cidfindname(id);
+                    pw.write(JSON.toJSONString(sxname));
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }else if(uri.indexOf("shuxingname")>=0){
+                String shuxingname = req.getParameter("shuxingname");
+                try {
+                    if(propertyDao.chachong(shuxingname)){
+                        pw.write("msgno");
+                    }else{
+                        int pid = Integer.parseInt(req.getParameter("pid"));
+                        String oldname = propertyDao.pidfindname(pid).getName();
+                        propertyDao.update(oldname,shuxingname);
+                        pw.write("msgyes");
+                    }
+                } catch (SQLException e) {
+                    e.printStackTrace();
                 }
             }
         }

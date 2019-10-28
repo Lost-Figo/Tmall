@@ -61,15 +61,14 @@
         <div class="type_title">添加商品</div>
         <form action="" method="post" class="form form-horizontal" id="form-article-add">
             <div class="clearfix cl">
-                <label class="form-label col-2"><span class="c-red">*</span>图片标题：</label>
+                <label class="form-label col-2"><span class="c-red">*</span>产品标题：</label>
                 <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="" name=""></div>
             </div>
+<%--            <div class=" clearfix cl">--%>
+<%--                <label class="form-label col-2">简略标题：</label>--%>
+<%--                <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="" name=""></div>--%>
+<%--            </div>--%>
             <div class=" clearfix cl">
-                <label class="form-label col-2">简略标题：</label>
-                <div class="formControls col-10"><input type="text" class="input-text" value="" placeholder="" id="" name=""></div>
-            </div>
-            <div class=" clearfix cl">
-
                 <div class="Add_p_s">
                     <label class="form-label col-2">产品编号：</label>
                     <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name=""></div>
@@ -77,31 +76,6 @@
                 <div class="Add_p_s">
                     <label class="form-label col-2">产&nbsp;&nbsp;&nbsp;&nbsp;地：</label>
                     <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name=""></div>
-                </div>
-                <div class="Add_p_s">
-                    <label class="form-label col-2">材&nbsp;&nbsp;&nbsp;&nbsp;质：</label>
-                    <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name=""></div>
-                </div>
-                <div class="Add_p_s">
-                    <label class="form-label col-2">品&nbsp;&nbsp;&nbsp;&nbsp;牌：</label>
-                    <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name=""></div>
-                </div>
-                <div class="Add_p_s">
-                    <label class="form-label col-2">产品重量：</label>
-                    <div class="formControls col-2"><input type="text" class="input-text" value="" placeholder="" id="" name="" >kg</div>
-                </div>
-                <div class="Add_p_s">
-                    <label class="form-label col-2">单位：</label>
-                    <div class="formControls col-2"><span class="select-box">
-				<select class="select">
-					<option>请选择</option>
-					<option value="1">件</option>
-					<option value="2">斤</option>
-					<option value="3">KG</option>
-					<option value="4">吨</option>
-					<option value="5">套</option>
-				</select>
-				</span></div>
                 </div>
                 <div class="Add_p_s">
                     <label class="form-label col-2">展示价格：</label>
@@ -114,21 +88,6 @@
 
 
             </div>
-
-            <div class="clearfix cl">
-                <label class="form-label col-2">关键词：</label>
-                <div class="formControls col-10">
-                    <input type="text" class="input-text" value="" placeholder="" id="" name="">
-                </div>
-            </div>
-            <div class="clearfix cl">
-                <label class="form-label col-2">内容摘要：</label>
-                <div class="formControls col-10">
-                    <textarea name="" cols="" rows="" class="textarea"  placeholder="说点什么...最少输入10个字符" datatype="*10-100" dragonfly="true" nullmsg="备注不能为空！" onKeyUp="textarealength(this,200)"></textarea>
-                    <p class="textarea-numberbar"><em class="textarea-length">0</em>/200</p>
-                </div>
-            </div>
-
             <div class="clearfix cl">
                 <label class="form-label col-2">图片上传：</label>
                 <div class="formControls col-10">
@@ -165,7 +124,6 @@
             <div class="clearfix cl">
                 <div class="Button_operation">
                     <button onClick="article_save_submit();" class="btn btn-primary radius" type="submit"><i class="icon-save "></i>保存并提交审核</button>
-                    <button onClick="article_save();" class="btn btn-secondary  btn-warning" type="button"><i class="icon-save"></i>保存草稿</button>
                     <button onClick="layer_close();" class="btn btn-default radius" type="button">&nbsp;&nbsp;取消&nbsp;&nbsp;</button>
                 </div>
             </div>
@@ -190,6 +148,7 @@
 <script type="text/javascript" src="js/H-ui.js"></script>
 <script type="text/javascript" src="js/H-ui.admin.js"></script>
 <p id="p12" style="display: none"></p>
+<p id="p13" style="display: none"></p>
 </body>
 </html>
 <script>
@@ -236,18 +195,14 @@
             }
         },
         callback: {
-            beforeClick: function(treeId, treeNode) {
-                var zTree = $.fn.zTree.getZTreeObj("tree");
-                if (treeNode.isParent) {
-                    zTree.expandNode(treeNode);
-                    return false;
-                } else {
-                    demoIframe.attr("src",treeNode.file + ".html");
-                    return true;
-                }
-            }
+            onClick : chooseNode1
         }
     };
+    function chooseNode1(event,treeId,name,treeNode){
+        $("#p13").text("");
+        $("#p13").text(name.name);
+        return false;
+    }
     $ajax({
         async:false,
         url:"category.pd",
@@ -520,16 +475,12 @@
                             '<param name="wmode" value="transparent" />' +
                             '<param name="allowscriptaccess" value="always" />' +
                             '</object>';
-
                         container.html(html);
-
                     })($wrap);
-
                     // 压根就没有安转。
                 } else {
                     $wrap.html('<a href="http://www.adobe.com/go/getflashplayer" target="_blank" border="0"><img alt="get flash player" src="http://www.adobe.com/macromedia/style_guide/images/160x41_Get_Flash_Player.jpg" /></a>');
                 }
-
                 return;
             } else if (!WebUploader.Uploader.support()) {
                 alert( 'Web Uploader 不支持您的浏览器！');
@@ -552,13 +503,11 @@
                 chunkSize: 512 * 1024,
                 server: 'http://lib.h-ui.net/webuploader/0.1.5/server/fileupload.php',
                 // runtimeOrder: 'flash',
-
                 // accept: {
                 //     title: 'Images',
                 //     extensions: 'gif,jpg,jpeg,bmp,png',
                 //     mimeTypes: 'image/*'
                 // },
-
                 // 禁掉全局的拖拽功能。这样不会出现图片拖进页面的时候，把图片打开。
                 disableGlobalDnd: true,
                 fileNumLimit: 300,
@@ -573,7 +522,6 @@
                     i = 0,
                     // 修改js类型
                     unAllowed = 'text/plain;application/javascript ';
-
                 for ( ; i < len; i++ ) {
                     // 如果在列表里面
                     if ( ~unAllowed.indexOf( items[ i ].type ) ) {
@@ -581,14 +529,11 @@
                         break;
                     }
                 }
-
                 return !denied;
             });
-
             uploader.on('dialogOpen', function() {
                 console.log('here');
             });
-
             // uploader.on('filesQueued', function() {
             //     uploader.sort(function( a, b ) {
             //         if ( a.name < b.name )
@@ -598,7 +543,6 @@
             //         return 0;
             //     });
             // });
-
             // 添加“添加文件”的按钮，
             uploader.addButton({
                 id: '#filePicker2',
@@ -806,7 +750,6 @@
                         text = '已成功上传' + stats.successNum+ '张照片至XX相册，'+
                             stats.uploadFailNum + '张照片上传失败，<a class="retry" href="#">重新上传</a>失败图片或<a class="ignore" href="#">忽略</a>'
                     }
-
                 } else {
                     stats = uploader.getStats();
                     text = '共' + fileCount + '张（' +
@@ -938,7 +881,6 @@
 
                 }
             });
-
             uploader.onError = function( code ) {
                 alert( 'Eroor: ' + code );
             };
