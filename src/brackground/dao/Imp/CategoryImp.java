@@ -19,16 +19,4 @@ public class CategoryImp implements CategoryDao {
         return queryRunner.query(sql,new BeanListHandler<TmCategory>(TmCategory.class));
     }
 }
-class test{
-    public static void main(String[] args) {
-        frontEnd.dao.CategoryDao categoryDao = new CategoryDaoImp();
-        List<TmCategory> list = null;
-        try {
-            list = categoryDao.findAll();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        System.out.println(list);
-    }
 
-}
