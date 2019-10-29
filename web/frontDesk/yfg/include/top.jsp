@@ -32,12 +32,12 @@
                 <img src="../img/aaa.png"/>
                 <div class="you-tan">会员权益<div class="sanjiao">◆</div></div>
             </div>
-            <div class="gouwu"><i class="iconfont">&#xe607;</i><p>购物车</p></div>
-            <div><img src="img/dddddddd.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
-            <div><img src="img/eeeeeeeee.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
-            <div><img src="img/ffffffff.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
-            <div><img src="img/gggggggggg.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
-            <div><img src="img/cccccccc.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
+            <div class="gouwu"><i class="iconfont">&#xe607;</i><a href="/cart.skip">购物车</a></div>
+            <div><img src="../img/img/dddddddd.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
+            <div><img src="../img/img/eeeeeeeee.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
+            <div><img src="../img/img/ffffffff.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
+            <div><img src="../img/img/gggggggggg.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
+            <div><img src="../img/img/cccccccc.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
         </div>
     </div>
     <!--右侧固定栏 e-->

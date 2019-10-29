@@ -13,7 +13,7 @@
             <img src="<%=basePath %>img/aaa.png"/>
             <div class="you-tan">会员权益<div class="sanjiao">◆</div></div>
         </div>
-        <div class="gouwu"><i class="iconfont">&#xe607;</i><p>购物车</p></div>
+        <div class="gouwu"><i class="iconfont">&#xe607;</i><p><a href="cart.skip">购物车</a></p></div>
         <div><img src="<%=basePath %>img/dddddddd.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
         <div><img src="<%=basePath %>img/eeeeeeeee.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>
         <div><img src="<%=basePath %>img/ffffffff.png"/><div class="you-tan">会员权益<div class="sanjiao">◆</div></div></div>

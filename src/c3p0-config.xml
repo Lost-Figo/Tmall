@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+    <default-config>
+    <property name="driverClass">com.mysql.jdbc.Driver</property>
+    <property name="jdbcUrl">jdbc:mysql://localhost:3306/jdbcdb</property>
+    <property name="user">root</property>
+    <property name="password">123456</property>
+    <property name="initialPoolSize">5</property>
+    <property name="maxPoolSize">20</property>
+</default-config>
+
+    <named-config name="oracle">
+        <property name="driverClass">oracle.jdbc.driver.OracleDriver</property>
+        <property name="jdbcUrl">jdbc:oracle:thin:@127.0.0.1:1521:orcl</property>
+        <property name="user">scott</property>
+        <property name="password">tiger</property>
+        <!-- 初始化数据库连接池时连接的数量 -->
+        <property name="initialPoolSize">10</property>
+        <!--最大空闲时间,30秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->
+        <property name="maxIdleTime">30</property>
+        <!-- 数据库连接池中的最大的数据库连接数 -->
+        <property name="maxPoolSize">100</property>
+        <!-- 数据库连接池中的最小的数据库连接数 -->
+        <property name="minPoolSize">10</property>
+        <!--最大的preperedStatement的数量 -->
+        <property name="maxStatements">200</property>
+    </named-config>
+</c3p0-config>

@@ -5,6 +5,7 @@ import entity.TmProduct;
 import frontEnd.dao.CategoryDao;
 import frontEnd.dao.ProductDao;
 import org.apache.commons.dbutils.QueryRunner;
+import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import utils.C3p0Utils;
 
@@ -26,16 +27,29 @@ public class ProductDaoImp implements ProductDao {
         String sql = "select * from tmproduct where cid = ?";
         return queryRunner.query(sql,new BeanListHandler<>(TmProduct.class),cid);
     }
+
+    @Override
+    public TmProduct findByPdid(int pdid) throws SQLException {
+        String sql = "select * from tmproduct where pdid = ?";
+        return queryRunner.query(sql,new BeanHandler<>(TmProduct.class),pdid);
+    }
 }
 class test2{
     public static void main(String[] args) {
         ProductDao productDao = new ProductDaoImp();
-        List<TmProduct> list = null;
+//        List<TmProduct> list = null;
+//        try {
+//            list = productDao.findAll();
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println(list);
+
         try {
-            list = productDao.findAll();
+            TmProduct product = productDao.findByPdid(3001);
+            System.out.println(product);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        System.out.println(list);
     }
 }
