@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
@@ -128,6 +129,21 @@ public class ProductController extends HttpServlet {
                         propertyDao.update(oldname,shuxingname);
                         pw.write("msgyes");
                     }
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }else if(uri.indexOf("createpro")>=0){
+                System.out.println(1);
+                String zhuname = req.getParameter("zhuname");
+                String funame = req.getParameter("funame");
+                String yuanjia = req.getParameter("yuanjia");
+                String zuxiao = req.getParameter("zuxiao");
+                String catename = req.getParameter("zhongleiname");
+                System.out.println(catename);
+                try {
+                    int cid = categoryDao.findidbyname(catename).intValue();
+                    productDao.createproduct(zhuname,funame,Integer.parseInt(yuanjia),Integer.parseInt(zuxiao),cid,5001);
+                    System.out.println(2);
                 } catch (SQLException e) {
                     e.printStackTrace();
                 }

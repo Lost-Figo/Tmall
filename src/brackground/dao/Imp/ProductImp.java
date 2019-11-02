@@ -28,4 +28,10 @@ public class ProductImp implements ProductDao {
         String sql = "select p.* from tmproduct p,tmcategory c where c.name = ? and p.cid=c.cid";
         return queryRunner.query(sql,new BeanListHandler<>(TmProduct.class),name);
     }
+
+    @Override
+    public void createproduct(String zname, String fname, int op, int pp, int cid, int sid) throws SQLException {
+        String sql = "insert into tmproduct(pdid,name,subtitle,originprice,promoteprice,cid,sid) values(tm_pdid.nextval,?,?,?,?,?,?)";
+        queryRunner.update(sql,zname,fname,op,pp,cid,sid);
+    }
 }
