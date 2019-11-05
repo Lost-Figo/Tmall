@@ -50,10 +50,11 @@ public class Upload extends HttpServlet {
                 String fileName = item.getName();
                 System.out.println(fileName);
                 int index = fileName.lastIndexOf("\\");
+                int productid = Integer.parseInt((String) req.getSession().getAttribute("productid"));
+
                 fileName = fileName.substring(index + 1);
                 req.setAttribute("realFileName", fileName);
-
-                String basePath = "E:\\imagetest";
+                String basePath = req.getSession().getServletContext().getRealPath("");
                 File file = new File(basePath, fileName);
                 try {
                     item.write(file);

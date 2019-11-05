@@ -34,4 +34,10 @@ public class ProductImp implements ProductDao {
         String sql = "insert into tmproduct(pdid,name,subtitle,originprice,promoteprice,cid,sid) values(tm_pdid.nextval,?,?,?,?,?,?)";
         queryRunner.update(sql,zname,fname,op,pp,cid,sid);
     }
+
+    @Override
+    public TmProduct findbypid(int pid) {
+        String sql = "select * from ";
+        return null;
+    }
 }

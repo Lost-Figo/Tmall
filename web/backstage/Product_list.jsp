@@ -81,7 +81,8 @@
                         "                        <td class=\"td-status\"><span class=\"label label-success radius\">已启用</span></td>" +
                         "                        <td class=\"td-manage\">" +
                         "                            <a onClick=\"member_stop(this,'10001')\"  href=\"javascript:;\" title=\"停用\"  class=\"btn btn-xs btn-success\"><i class=\"icon-ok bigger-120\"></i></a>" +
-                        "                            <a title=\"编辑\" onclick=\"member_edit('编辑','member-add.html','4','','510')\" href=\"javascript:;\"  class=\"btn btn-xs btn-info\" ><i class=\"icon-edit bigger-120\"></i></a>" +
+                        "                            <a title=\"编辑\" onclick=\"member_edit('编辑','member-change.jsp','4','','510',"+data[pd].pdid+")\" href=\"javascript:;\"  class=\"btn btn-xs btn-info\" ><i class=\"icon-edit bigger-120\"></i></a>" +
+                        "                            <a title=\"添加图片\" onclick=\"member_edit('编辑','img-change.jsp','4','','510',"+data[pd].pdid+")\" href=\"javascript:;\"  class=\"btn btn-xs btn-info\" ><i class=\"icon-edit bigger-120\"></i></a>" +
                         "                            <a title=\"删除\" href=\"javascript:;\"  onclick=\"member_del(this,'1')\" class=\"btn btn-xs btn-warning\" ><i class=\"icon-trash  bigger-120\"></i></a>" +
                         "                        </td>";
                 }
@@ -247,7 +248,7 @@
                     "                    <tbody>";
                 for (var pd in data){
                     html += "<tr>";
-                    html += "<td width=\"25px\"><label><input type=\"checkbox\" class=\"ace\" ><span class=\"lbl\"></span></label></td>";
+                    html += "<td width=\"25px\"><label><input type=\"checkbox\" class=\"ace\" ><span class=\"lbl\"></label></td>";
                     html += "<td width=\"80px\">"+data[pd].pdid+"</td>";
                     html += "<td width=\"250px\"><u style=\"cursor:pointer\" class=\"text-primary\" onclick=\"\">"+data[pd].name+"</u></td>";
                     html += "<td width=\"100px\">"+data[pd].originPrice+"</td>";
@@ -258,7 +259,8 @@
                         "                        <td class=\"td-status\"><span class=\"label label-success radius\">已启用</span></td>" +
                         "                        <td class=\"td-manage\">" +
                         "                            <a onClick=\"member_stop(this,'10001')\"  href=\"javascript:;\" title=\"停用\"  class=\"btn btn-xs btn-success\"><i class=\"icon-ok bigger-120\"></i></a>" +
-                        "                            <a title=\"编辑\" onclick=\"member_edit('编辑','member-add.html','4','','510')\" href=\"javascript:;\"  class=\"btn btn-xs btn-info\" ><i class=\"icon-edit bigger-120\"></i></a>" +
+                        "                            <a title=\"编辑\" onclick=\"member_edit('编辑','member-add.html','4','','510',"+data[pd].pdid+")\" href=\"javascript:;\"  class=\"btn btn-xs btn-info\" ><i class=\"icon-edit bigger-120\"></i></a>" +
+                        "                            <a title=\"添加图片\" onclick=\"member_edit('编辑','img-change.jsp','4','','510',"+data[pd].pdid+")\" href=\"javascript:;\"  class=\"btn btn-xs btn-info\" ><i class=\"icon-edit bigger-120\"></i></a>" +
                         "                            <a title=\"删除\" href=\"javascript:;\"  onclick=\"member_del(this,'1')\" class=\"btn btn-xs btn-warning\" ><i class=\"icon-trash  bigger-120\"></i></a>" +
                         "                        </td>";
                 }
@@ -337,7 +339,8 @@
         });
     }
     /*产品-编辑*/
-    function member_edit(title,url,id,w,h){
+    function member_edit(title,url,id,w,h,obj){
+        sessionStorage.setItem("productid",obj);
         layer_show(title,url,w,h);
     }
 
