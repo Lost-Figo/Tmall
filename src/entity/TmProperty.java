@@ -37,4 +37,13 @@ public class TmProperty {
 
     public TmProperty() {
     }
+
+    @Override
+    public String toString() {
+        return "TmProperty{" +
+                "pid=" + pid +
+                ", name='" + name + '\'' +
+                ", cid=" + cid +
+                '}';
+    }
 }

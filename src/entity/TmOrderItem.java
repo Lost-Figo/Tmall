@@ -57,4 +57,15 @@ public class TmOrderItem {
         this.oid = oid;
         this.count = count;
     }
+
+    @Override
+    public String toString() {
+        return "TmOrderItem{" +
+                "oiid=" + oiid +
+                ", pdid=" + pdid +
+                ", tmuid=" + tmuid +
+                ", oid=" + oid +
+                ", count=" + count +
+                '}';
+    }
 }

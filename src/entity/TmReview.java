@@ -59,4 +59,15 @@ public class TmReview {
 
     public TmReview() {
     }
+
+    @Override
+    public String toString() {
+        return "TmReview{" +
+                "rid=" + rid +
+                ", tmuid=" + tmuid +
+                ", pdid=" + pdid +
+                ", content='" + content + '\'' +
+                ", createDate=" + createDate +
+                '}';
+    }
 }

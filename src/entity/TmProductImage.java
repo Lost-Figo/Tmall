@@ -37,4 +37,13 @@ public class TmProductImage {
 
     public TmProductImage() {
     }
+
+    @Override
+    public String toString() {
+        return "TmProductImage{" +
+                "piid=" + piid +
+                ", pdid=" + pdid +
+                ", imageadd='" + imageadd + '\'' +
+                '}';
+    }
 }

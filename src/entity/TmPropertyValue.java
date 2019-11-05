@@ -4,7 +4,7 @@ public class TmPropertyValue {
     private int pvid;
     private int pid;
     private int pdid;
-    private int value;
+    private String value;
 
     public int getPvid() {
         return pvid;
@@ -30,15 +30,15 @@ public class TmPropertyValue {
         this.pdid = pdid;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
-    public TmPropertyValue(int pvid, int pid, int pdid, int value) {
+    public TmPropertyValue(int pvid, int pid, int pdid, String value) {
         this.pvid = pvid;
         this.pid = pid;
         this.pdid = pdid;
@@ -46,5 +46,15 @@ public class TmPropertyValue {
     }
 
     public TmPropertyValue() {
+    }
+
+    @Override
+    public String toString() {
+        return "TmPropertyValue{" +
+                "pvid=" + pvid +
+                ", pid=" + pid +
+                ", pdid=" + pdid +
+                ", value='" + value + '\'' +
+                '}';
     }
 }

@@ -10,7 +10,9 @@
 <%@include file="include/top.jsp"%>
 <%@include file="include/broadside.jsp"%>
 <%@include file="include/topSearch.jsp"%>
+<%--可替换--%>
 <%@include file="include/topside.jsp"%>
 <%@include file="include/lunbo.jsp"%>
 <%@include file="include/productByCid.jsp"%>>
+<%--可替换--%>
 <%@include file="include/footer.jsp"%>
